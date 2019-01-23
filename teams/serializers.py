@@ -5,4 +5,9 @@ class TeamSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Team
-        
+        fields = [
+            'name',
+            'image',
+            'city',
+            'sport',
+        ]

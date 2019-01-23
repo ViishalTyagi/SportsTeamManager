@@ -22,4 +22,7 @@ class Team(models.Model):
     image = models.ImageField(upload_to=image_path, null=True, blank=True)
     city = models. CharField(max_length=20)
     sport = models.CharField(max_length=20)
+    
+    def __str__(self):
+        return self.name
 

@@ -7,7 +7,7 @@ class Match(models.Model):
     #update date_time
     date_time = models.DateTimeField(auto_now=False, auto_now_add=False)
     location = models.CharField(max_length=120)
-    Score = models.CharField(max_length=150)
+    score = models.CharField(max_length=150)
 
     class Meta:
         verbose_name_plural = "Matches"

@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import TeamView
+from .views import MatchView
+
+app_name='matches-api'
 
 urlpatterns = [
-    path('',TeamView.as_view(), name='teams')
+    path('<pk>/',MatchView.as_view(), name='matches')
 ]
