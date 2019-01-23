@@ -8,12 +8,8 @@ from matches.serializers import MatchSerializer
 from .serializers import TeamSerializer
 from drf_multiple_model.views import ObjectMultipleModelAPIView
 from django.utils import timezone
-# from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-# from rest_framework.permissions import IsAuthenticated
 
 class TeamView(generics.RetrieveUpdateDestroyAPIView):
-    # authentication_classes = (SessionAuthentication, BasicAuthentication)
-    # permission_classes = (IsAuthenticated,)
     lookup_field = 'pk'
     serializer_class = TeamSerializer
 
@@ -35,8 +31,6 @@ class TeamCreate(generics.CreateAPIView):
         return Team.objects.all()
 
 class TeamGet(ObjectMultipleModelAPIView, generics.ListAPIView):
-    # authentication_classes = (SessionAuthentication, BasicAuthentication)
-    # permission_classes = (IsAuthenticated,)
     lookup_field = 'pk'
     
     def get_querylist(self):

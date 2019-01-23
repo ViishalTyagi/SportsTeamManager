@@ -5,12 +5,8 @@ from teams.models import Team
 from django.db.models import Q
 from .serializers import MatchSerializer
 from django_filters import rest_framework as filters
-# from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-# from rest_framework.permissions import IsAuthenticated
 
 class MatchView(generics.RetrieveUpdateDestroyAPIView):
-    # authentication_classes = (SessionAuthentication, BasicAuthentication)
-    # permission_classes = (IsAuthenticated,)
     lookup_field = 'pk'
     serializer_class = MatchSerializer
 
@@ -18,8 +14,6 @@ class MatchView(generics.RetrieveUpdateDestroyAPIView):
         return Match.objects.all()
 
 class MatchCreate(generics.CreateAPIView):
-    # authentication_classes = (SessionAuthentication, BasicAuthentication)
-    # permission_classes = (IsAuthenticated,)
     serializer_class = MatchSerializer
 
     def get_queryset(self):
@@ -35,8 +29,6 @@ class MatchFilter(filters.FilterSet):
 
 
 class MatchGet(generics.ListAPIView):
-    # authentication_classes = (SessionAuthentication, BasicAuthentication)
-    # permission_classes = (IsAuthenticated,)
     lookup_field = 'pk'
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
