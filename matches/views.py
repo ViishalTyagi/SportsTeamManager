@@ -9,3 +9,9 @@ class MatchView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Match.objects.all()
+
+class MatchCreate(generics.CreateAPIView):
+    serializer_class = MatchSerializer
+
+    def get_queryset(self):
+        return Match.objects.all()

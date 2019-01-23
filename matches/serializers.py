@@ -5,7 +5,7 @@ class MatchSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Match
-        fields= [
+        fields = [
             'first_team',
             'second_team',
             'date_time',

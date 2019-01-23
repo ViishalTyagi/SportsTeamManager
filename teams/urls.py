@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import TeamView
+from .views import TeamView, TeamCreate
 
 app_name='teams-api'
 
 urlpatterns = [
-    path('<pk>/', TeamView.as_view(), name='teams')
+    path('create', TeamCreate.as_view(), name='create-teams'),
+    path('rud/<pk>/', TeamView.as_view(), name='teams'),
 ]

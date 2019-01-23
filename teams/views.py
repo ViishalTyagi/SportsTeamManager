@@ -9,3 +9,9 @@ class TeamView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Team.objects.all()
+
+class TeamCreate(generics.CreateAPIView):
+    serializer_class = TeamSerializer
+
+    def get_queryset(self):
+        return Team.objects.all()
