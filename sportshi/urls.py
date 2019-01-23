@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# from .views import LoginView
+from rest_framework.routers import DefaultRouter
+from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('api/auth/', LoginView.as_view()),
+    path('token/', obtain_jwt_token),
     path('teams/', include('teams.urls', namespace='teams-api')),
     path('matches/', include('matches.urls', namespace='matches-api')),
 

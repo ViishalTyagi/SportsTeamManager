@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_multiple_model',
     'django_filters',
+    'rest_framework.authtoken',
     'teams',
     'matches',
 ]
@@ -124,9 +125,10 @@ USE_TZ = True
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
